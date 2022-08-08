@@ -25,12 +25,14 @@ jobs:
         run: |
           npm install
           npm run build --prod
+          pwd 
+          ls
 
-      - name: Upload artifact for deployment job
-        uses: actions/upload-artifact@v2
-        with:
-          name: node-app
-          path: .
+#      - name: Upload artifact for deployment job
+#        uses: actions/upload-artifact@v2
+#        with:
+#          name: node-app
+#          path: ./dist
 
   deploy:
     runs-on: ubuntu-latest
@@ -51,4 +53,4 @@ jobs:
         with:
           app-name: 'AngularDeployTest-1'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_E8C7104C8F864B08BFF2D66C9092F973 }}
-          package: ./dist/AngularDeployTest-1
+          package: ./dist/*
