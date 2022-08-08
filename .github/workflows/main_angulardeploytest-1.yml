@@ -55,4 +55,4 @@ jobs:
         with:
           app-name: 'AngularDeployTest-1'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_E8C7104C8F864B08BFF2D66C9092F973 }}
-          package: ./dist/
+          package: .
